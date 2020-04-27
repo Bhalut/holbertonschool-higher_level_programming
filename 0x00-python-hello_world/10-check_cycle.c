@@ -8,7 +8,7 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *current, *tmp;
-	int i = 0, e = 0;
+	int e = 0;
 
 	current = list;
 	tmp = list;
@@ -21,18 +21,13 @@ int check_cycle(listint_t *list)
 			{
 				e++;
 				if (e > 1)
-					break;
+					return (1);
 			}
 
 			tmp = tmp->next;
 		}
-		if (e > 1)
-		{
-			i = 1;
-			break;
-		}
 		e = 0;
 	}
 
-	return (i);
+	return (0);
 }
