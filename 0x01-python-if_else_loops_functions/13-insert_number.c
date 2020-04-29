@@ -24,7 +24,7 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 
 	while (current->next && current->next->n <= number) 
-		current = current->next
+		current = current->next;
 
 	tmp->next = current->next;
 	current->next = tmp;
