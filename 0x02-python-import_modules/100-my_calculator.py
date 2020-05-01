@@ -7,13 +7,13 @@ if __name__ == "__main__":
         a = int(argv[1])
         b = int(argv[3])
 
-        if arg[2] == "+":
+        if argv[2] == "+":
             print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
-        elif arg[2] == "-":
+        elif argv[2] == "-":
             print("{:d} - {:d} = {:d}".format(a, b, add(a, b)))
-        elif arg[2] == "*":
+        elif argv[2] == "*":
             print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
-        elif arg[2] == "/":
+        elif argv[2] == "/":
             print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
