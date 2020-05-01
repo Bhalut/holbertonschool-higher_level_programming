@@ -3,13 +3,14 @@ def calculate(arg, a, b):
     if arg[2] == "+":
         print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
     elif arg[2] == "-":
-        print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+        print("{:d} - {:d} = {:d}".format(a, b, add(a, b)))
     elif arg[2] == "*":
         print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
     elif arg[2] == "/":
         print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
 
 
 if __name__ == "__main__":
