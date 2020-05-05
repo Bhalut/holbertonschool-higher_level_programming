@@ -1,5 +1,10 @@
 #include "lists.h"
 
+/**
+ * reverse - reverse sigly linked list
+ * @head: singly linked list
+ * Return: void
+ */
 void reverse(listint_t **head)
 {
 	listint_t *current = *head, *next = NULL, *prev = NULL;
