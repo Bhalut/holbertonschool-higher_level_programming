@@ -28,6 +28,9 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *rev = *head, *tmp = *head;
 
+	if (!head)
+		return (0);
+
 	reverse(&rev);
 
 	while (tmp->next != NULL)
