@@ -29,7 +29,7 @@ int is_palindrome(listint_t **head)
 	listint_t *rev = *head, *tmp = *head;
 
 	if (!head)
-		return (0);
+		return (1);
 
 	reverse(&rev);
 
