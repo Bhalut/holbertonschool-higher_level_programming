@@ -38,11 +38,11 @@ int is_palindrome(listint_t **head)
 		if (rev->n != tmp->n)
 			return (0);
 
-		if (rev == NULL)
-			return (1);
-
 		rev = rev->next;
 		tmp = tmp->next;
+
+		if (rev == NULL)
+			return (1);
 	}
 
 	return (1);
