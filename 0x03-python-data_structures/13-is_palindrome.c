@@ -33,10 +33,13 @@ int is_palindrome(listint_t **head)
 
 	reverse(&rev);
 
-	while (tmp->next != NULL)
+	while (tmp != NULL)
 	{
 		if (rev->n != tmp->n)
 			return (0);
+
+		if (rev == NULL)
+			return (1);
 
 		rev = rev->next;
 		tmp = tmp->next;
