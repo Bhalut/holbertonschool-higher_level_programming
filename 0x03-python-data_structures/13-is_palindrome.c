@@ -1,22 +1,22 @@
 #include "lists.h"
 
 /**
- * reverse - reverse sigly linked list
- * @head: singly linked list
- * Return: void
+ * palindrome - check palindrome in sigly linked list
+ * @left: init singly linked list
+ * @right: end singly linked list
+ * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
-void reverse(listint_t **head)
+int palindrome(listint_t **left, listint_t *right)
 {
-	listint_t *current = *head, *next = NULL, *prev = NULL;
+	int isPalindrome;
 
-	while (current)
-	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
-	}
-	*head = prev;
+	if (right == NULL)
+		return (1);
+
+	isPalindrome = (palindrome(left, right->next) && (*left)->n == right->n);
+	*left = (*left)->next;
+
+	return (isPalindrome);
 }
 
 /**
@@ -26,24 +26,8 @@ void reverse(listint_t **head)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *rev = *head, *tmp = *head;
-
 	if (!(*head) || !head)
 		return (1);
 
-	reverse(&rev);
-
-	while (tmp != NULL && tmp->next != NULL)
-	{
-		if (rev->n != tmp->n)
-			return (0);
-
-		rev = rev->next;
-		tmp = tmp->next;
-
-		if (rev == NULL || tmp == NULL)
-			return (1);
-	}
-
-	return (1);
+	return (palindrome(head, *head));
 }
