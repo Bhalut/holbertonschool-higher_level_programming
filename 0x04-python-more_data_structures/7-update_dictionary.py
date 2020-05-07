@@ -3,6 +3,7 @@ def update_dictionary(a_dictionary, key, value):
     if not a_dictionary.get(key):
         a_dictionary.update({key: value})
 
-    new = {k: (v if k != key else value) for k, v in a_dictionary.items()}
+    for k, v in a_dictionary.items():
+        a_dictionary[k] = (v if k != key else value)
 
-    return new
+    return a_dictionary
