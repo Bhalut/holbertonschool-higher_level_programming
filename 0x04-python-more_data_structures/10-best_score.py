@@ -11,4 +11,4 @@ def best_score(a_dictionary):
             maximun = v
             key = k
 
-    return a_dictionary[key]
+    return key
