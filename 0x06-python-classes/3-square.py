@@ -1,4 +1,17 @@
 #!/usr/bin/python3
+""" 3-square.py
+
+    Square class with public method (Area)
+
+    Raises:
+        TypeError: Error by not be type integer
+        ValueError: Error by be negative number
+
+    Returns:
+        integer: Square Area (size * size)
+"""
+
+
 class Square():
     """Square Class
 
