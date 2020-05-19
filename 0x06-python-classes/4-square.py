@@ -3,6 +3,7 @@ class Square():
     """Square Class
 
     Class Square with public method (Area)
+    and getter - setter for size attribute
     """
 
     def __init__(self, size=0):
@@ -17,13 +18,45 @@ class Square():
             TypeError: Error by not be type integer
             ValueError: Error by be negative number
         """
+        self.__size = size
+
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
 
         if size < 0:
             raise ValueError("size must be >= 0")
 
-        self.__size = size
+    @property
+    def size(self):
+        """size Getter
+
+        Get size value
+
+        Returns:
+            integer: size value
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """size Setter
+
+        Set size value
+
+        Args:
+            value (integer): size of Square
+
+        Raises:
+            TypeError: Error by not be type integer
+            ValueError: Error by be negative number
+        """
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+
+        if value < 0:
+            raise ValueError("size must be >= 0")
+
+        self.__size = value
 
     def area(self):
         """area Method
