@@ -1,4 +1,14 @@
 #!/usr/bin/python3
+""" 2-square.py
+
+    Square class with validation attribute
+
+    Raises:
+        TypeError: Error by not be type integer
+        ValueError: Error by be negative number
+"""
+
+
 class Square():
     """Square Class
 
