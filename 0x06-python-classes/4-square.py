@@ -1,4 +1,18 @@
 #!/usr/bin/python3
+""" 4-square.py
+
+    Class Square with public method (Area)
+    and getter - setter for size attribute
+
+    Raises:
+        TypeError: Error by not be type integer
+        ValueError: Error by be negative number
+
+    Returns:
+        integer: Square Area (size * size)
+"""
+
+
 class Square():
     """Square Class
 
@@ -13,17 +27,7 @@ class Square():
 
         Args:
             size (int, optional): size of Square. Defaults to 0.
-
-        Raises:
-            TypeError: Error by not be type integer
-            ValueError: Error by be negative number
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-
-        if size < 0:
-            raise ValueError("size must be >= 0")
-
         self.__size = size
 
     @property
