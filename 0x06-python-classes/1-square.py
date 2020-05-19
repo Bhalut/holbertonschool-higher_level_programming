@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+""" 1-square.py
+
+    Square class with private attribute size
+"""
+
+
 class Square():
     """Square Class
 
