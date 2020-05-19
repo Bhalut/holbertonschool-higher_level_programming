@@ -4,7 +4,7 @@
 
 ### General
 
-* Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))
+* Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :)).
 * What is OOP
 * “first-class everything”
 * What is a class
