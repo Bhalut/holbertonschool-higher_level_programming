@@ -19,7 +19,7 @@ class MagicClass():
     class MagicClass
     """
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """__init__ Constructor
 
         Contructor MagicClass
@@ -34,9 +34,8 @@ class MagicClass():
 
         if type(radius) is not int or type(radius) is not float:
             raise TypeError('radius must be a number')
-        else:
-            self._MagicClass__radius = radius
-            return
+
+        self._MagicClass__radius = radius
 
     def area(self):
         """area Method
