@@ -1,0 +1,22 @@
+==============
+1-my_list.txt
+==============
+
+Import MyList Class file from 1-my_list.py file:
+    >>> MyList = __import__('1-my_list').MyList
+
+Instanciate MyList:
+    >>> lst = MyList()
+
+Append lst:
+    >>> lst.append(5)
+
+Other Append lst:
+    >>> lst.append(4)
+
+Other Append lst again:
+    >>> lst.append(9)
+
+Use print_sorted function:
+    >>> lst.print_sorted()
+    [4, 5, 9]
