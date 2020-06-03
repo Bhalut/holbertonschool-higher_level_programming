@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 8-rectangle.py
+""" 9-rectangle.py
 
     Rectangle.py
 """
@@ -32,7 +32,21 @@ class Rectangle(BaseGeometry):
         BaseGeometry.integer_validator(self, "height", self.__height)
 
     def area(self):
+        """area method
+
+        Area of Rectangle
+
+        Returns:
+            integer: area
+        """
         return self.__width * self.__height
 
     def __str__(self):
+        """__str__ method
+
+        string class
+
+        Returns:
+            string: representation
+        """
         return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
