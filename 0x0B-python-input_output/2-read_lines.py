@@ -14,11 +14,17 @@ def read_lines(filename="", nb_lines=0):
         filename (str, optional): file. Defaults to "".
         nb_lines (int, optional): number of lines. Defaults to 0.
     """
+    count = 0
+
     with open(file=filename, mode="r", encoding="utf8") as f:
         if nb_lines == 0:
             for line in f:
                 print(line, end="")
 
         if nb_lines > 0:
-            for line in range(nb_lines):
-                print(f.readline(), end="")
+            for line in f:
+                if count != nb_lines:
+                    print(f.readline(), end="")
+                    count += 1
+                else:
+                    break
