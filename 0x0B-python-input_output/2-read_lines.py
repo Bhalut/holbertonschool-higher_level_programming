@@ -24,7 +24,7 @@ def read_lines(filename="", nb_lines=0):
         if nb_lines > 0:
             for line in f:
                 if count != nb_lines:
-                    print(f.readline(), end="")
+                    print(line, end="")
                     count += 1
                 else:
                     break
