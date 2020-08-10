@@ -28,8 +28,7 @@ def main():
                     ORDER BY states.id ASC")
 
     for row in cursor.fetchall():
-        if row[1].startwith("N"):
-            print(row)
+        print(row)
 
     cursor.close()
     db.close()
