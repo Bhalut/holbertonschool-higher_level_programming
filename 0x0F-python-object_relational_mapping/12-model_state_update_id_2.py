@@ -14,7 +14,6 @@ def main():
     mysql_username = argv[1]
     mysql_password = argv[2]
     database_name = argv[3]
-    search = argv[4]
 
     db = ("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
         mysql_username, mysql_password, database_name))
