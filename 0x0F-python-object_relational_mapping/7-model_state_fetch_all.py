@@ -16,8 +16,8 @@ def main():
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
 
-    db = ("mysql+mysqldb://{}:{}".format(mysql_username, mysql_password)
-          "@localhost:3306/{}".format(database_name))
+    db = ("mysql+mysqldb://{}:{}@localhost:3306/{}"
+          .format(mysql_username, mysql_password, database_name))
 
     engine = create_engine(db, pool_pre_ping=True)
     Base.metadata.create_all(engine)
