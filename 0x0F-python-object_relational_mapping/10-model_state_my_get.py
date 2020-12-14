@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-""" 9-model_state_filter_a.py
+""" 10-model_state_my_get.py
 
-    lists all State objects that contain
-    the letter a from the database hbtn_0e_6_usa.
+    prints the State object with the name passed as argument
+    from the database hbtn_0e_6_usa.
 """
 
 from model_state import Base, State
@@ -25,12 +25,12 @@ def main():
     session = sessionmaker(bind=engine)
     Session = session()
 
-    states = Session.query(State).filter(State.name.contains('a'))
-    states = states.order_by(State.id)
+    states = Session.query(State).filter(State.name == par[4]).first()
 
-    for state in states:
-        print('{}: {}'.format(state.id, state.name))
-
+    if states:
+        print(states.id)
+    else:
+        print('Not found')
     Session.close()
 
 
