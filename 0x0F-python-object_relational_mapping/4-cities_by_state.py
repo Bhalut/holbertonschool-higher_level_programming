@@ -23,8 +23,8 @@ def main():
 
     cursor = db.cursor()
     cursor.execute(
-        """SELECT cities.id, cities.name, states.name
-        FROM cities LEFT JOIN states ON cities.state_id = states.id;""")
+        """SELECT cities.id, cities.name, states.name FROM cities
+        LEFT JOIN states ON cities.state_id = states.id;""")
 
     for row in cursor.fetchall():
         print(row)
