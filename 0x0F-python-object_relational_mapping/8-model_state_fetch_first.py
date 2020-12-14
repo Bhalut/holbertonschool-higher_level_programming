@@ -11,7 +11,6 @@ from sqlalchemy.orm import sessionmaker
 
 
 def main():
-
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
