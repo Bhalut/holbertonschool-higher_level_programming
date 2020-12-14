@@ -6,15 +6,15 @@
 """
 
 from model_state import Base, State
-from sys import argv as par
+from sys import argv
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 
 def main():
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+    mysql_username = argv[1]
+    mysql_password = argv[2]
+    database_name = argv[3]
 
     db = ("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
         mysql_username, mysql_password, database_name))
