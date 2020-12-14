@@ -15,6 +15,7 @@ def main():
     mysql_username = argv[1]
     mysql_password = argv[2]
     database_name = argv[3]
+    search = argv[4]
 
     db = ("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
         mysql_username, mysql_password, database_name))
@@ -25,7 +26,7 @@ def main():
     session = sessionmaker(bind=engine)
     Session = session()
 
-    states = Session.query(State).filter(State.name == par[4]).first()
+    states = Session.query(State).filter(State.name == search).first()
 
     if states:
         print(states.id)
