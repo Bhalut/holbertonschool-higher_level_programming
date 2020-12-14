@@ -16,11 +16,11 @@ def main():
     database_name = sys.argv[3]
 
     db = MySQLdb.connect(
-         "localhost",
-         mysql_username,
-         mysql_password,
-         database_name,
-         3306)
+        "localhost",
+        mysql_username,
+        mysql_password,
+        database_name,
+        3306)
 
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states \
@@ -32,6 +32,7 @@ def main():
 
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
