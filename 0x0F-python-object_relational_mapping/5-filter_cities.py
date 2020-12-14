@@ -28,7 +28,7 @@ def main():
          "cities LEFT JOIN states ON cities.state_id = states.id WHERE "
          "states.name = %s ORDER BY cities.id ASC"), (search, ))
 
-    print(", ".join([row[1] for row in rows]))
+    print(", ".join([row[1] for row in cursor.fetchall()]))
 
     cursor.close()
     db.close()
