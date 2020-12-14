@@ -19,7 +19,7 @@ def main():
     db = ("mysql+mysqldb://{}:{}".format(mysql_username, mysql_password)
           "@localhost:3306/{}".format(database_name))
 
-    engine = create_engine(args, pool_pre_ping=True)
+    engine = create_engine(db, pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     session = sessionmaker(bind=engine)
