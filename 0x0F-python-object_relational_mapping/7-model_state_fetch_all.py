@@ -22,7 +22,7 @@ def main():
     engine = create_engine(args, pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    session = sessionmaker(engine)
+    session = sessionmaker(bind=engine)
     Session = session()
 
     for state in Session.query(State).order_by(State.id).all():
