@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" 7-model_state_fetch_all.py
+""" 8-model_state_fetch_first.py
 
-    lists all State objects from the database hbtn_0e_6_usa.
+    prints the first State object from the database.
 """
 
 from model_state import Base, State
@@ -16,8 +16,8 @@ def main():
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
 
-    db = ("mysql+mysqldb://{}:{}@localhost:3306/{}"
-          .format(mysql_username, mysql_password, database_name))
+    db = ("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+        mysql_username, mysql_password, database_name))
 
     engine = create_engine(db, pool_pre_ping=True)
     Base.metadata.create_all(engine)
