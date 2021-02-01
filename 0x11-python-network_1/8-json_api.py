@@ -9,20 +9,25 @@ from sys import argv
 
 
 def main():
-    """Takes a url, sendsrequest and display body
+    """Takes a url, sends request and display body
     """
-    q = ""
-    if len(argv) > 1:
+    if len(argv) == 2:
         q = argv[1]
-    request = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
+    else:
+        q = ""
+    post_url = "http://0.0.0.0:5000/search_user"
+    payload = {
+        'q': q
+    }
+    req = requests.post(post_url, data=payload)
     try:
-        json = request.json()
-        if j:
-            print("[{}] {}".format(json.get('id'), json.get('name')))
+        json_content = req.json()
+        if len(json_content) == 0:
+            print("No result")
         else:
-            print('No result')
-    except ValueError:
-        print('Not a valid JSON')
+            print("[{}] {}".format(json_content['id'], json_content['name']))
+    except:
+        print("Not a valid JSON")
 
 
 if __name__ == "__main__":
