@@ -11,23 +11,18 @@ from sys import argv
 def main():
     """Takes a url, sendsrequest and display body
     """
-    if len(argv) == 2:
+    q = ""
+    if len(argv) > 1:
         q = argv[1]
-    else:
-        q = ""
-    post_url = "http://0.0.0.0:5000/search_user"
-    payload = {
-        'q': q
-    }
-    req = requests.post(post_url, data=payload)
+    request = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
-        json_content = req.json()
-        if len(json_content) == 0:
-            print("No result")
+        json = request.json()
+        if j:
+            print("[{}] {}".format(json.get('id'), json.get('name')))
         else:
-            print("[{}] {}".format(json_content['id'], json_content['name']))
-    except:
-        print("Not a valid JSON")
+            print('No result')
+    except ValueError:
+        print('Not a valid JSON')
 
 
 if __name__ == "__main__":
