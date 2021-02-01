@@ -15,6 +15,7 @@ def find_peak(list_of_integers):
         Max integer or None
     """
     if list_of_integers:
-        return max(list_of_integers)
+        list_of_integers.sort()
+        return list_of_integers[-1]
     else:
         return None
